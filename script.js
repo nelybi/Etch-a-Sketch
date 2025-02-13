@@ -24,8 +24,18 @@ function createGrid(size) {
     divItem.style.width = `${700 / size}px`;
     divItem.style.height = `${700 / size}px`;
 
+    function getRandomRgb() {
+      return `rgb(${Math.floor(Math.random() * 256)}, 
+                  ${Math.floor(Math.random() * 256)}, 
+                  ${Math.floor(Math.random() * 256)})`;
+    }
+
+    for (let i = 0; i < 10; i++) {
+      console.log(getRandomRgb());
+    }
+
     divItem.addEventListener("mouseenter", function () {
-      divItem.style.backgroundColor = "gold";
+      divItem.style.backgroundColor = getRandomRgb();
     });
 
     container.appendChild(divItem);
